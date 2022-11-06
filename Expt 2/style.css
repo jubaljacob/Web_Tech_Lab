@@ -1,0 +1,32 @@
+.header {
+    margin: 1rem;
+    padding: 1rem 1rem;
+    text-align: center;
+}
+.content {
+display: inline-flex;
+padding: 1rem 2rem;
+padding-left: 5rem;
+vertical-align: middle;
+}
+
+.navbar {
+margin: 1rem;
+text-align: center;
+}
+
+.link {
+    display: inline-flex;
+    padding: 1rem 1rem;
+    }
+
+.vid{
+    float: left;
+    width: 40.33%;
+    padding: 3px;
+}
+.contd{
+    content: "";
+    clear: both;
+    display: table;
+}

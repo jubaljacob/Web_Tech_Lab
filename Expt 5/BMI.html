@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BMI calculator</title>
+</head>
+
+<body>
+    <hl><b>Calculate your body index</b></hl>
+
+    <fieldset>
+        Weight(in kilograms): <input type="text" id="weight"><br><br>
+        Height(in meters): <input type="text" id="height"><br><br>
+
+        <button type="submit" onclick="calculate()">Get BMI </button>
+    </fieldset>
+
+    <p> Your BMI is <u><b><span id="score1"></span></b></u><br>
+        Your body type is <u><b><span id="type1"></span></b></u>
+    </p>
+
+    <script language="JavaScript">
+        function calculate() {
+            var weight = parseFloat(document.getElementById("weight").value);
+            var height = parseFloat(document.getElementById("height").value);
+            const score = weight / (height * height)
+            document.getElementById("score1").innerHTML = score;
+
+            var type;
+            if (score < 18) {
+                type = "Underweight";
+            } else if (score > 18 && score < 25) {
+                type = "Normal";
+            } else if (score > 25 && score < 30) {
+                type = "Overweight";
+            } else {
+                type = "Obese";
+            }
+
+            document.getElementById("type1").innerHTML = type;
+        }
+    </script>
+
+
+</body>
+
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercise 5</title>
+<script src="script.js"></script>
+<link rel="shortcut icon" href="media/icon.ico" type="image/x-icon">
+</head>
+<body>
+<fieldset>
+<legend><h1>Calculate your BMI!</h1></legend>
+Weight (in kgs): <input id="weight" type="text"><br><br>
+Height (in cms): <input id="height" type="text"><br><br>
+<button onclick="bmi()">Calculate</button><br>
+<p id="bmi"></p>
+<p id="result"></p>
+<a href="index.html">Previous question!</a>&nbsp;
+<a href="third.html">Next question!</a>
+</fieldset>
+</body>
+</html> -->
+

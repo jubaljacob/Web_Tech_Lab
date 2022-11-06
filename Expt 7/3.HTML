@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        .trapezoid {
+            border-bottom: 50px solid rgb(122, 20, 20);
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            height: 0px;
+            width: 125px;
+            padding-left: 10px;
+        }
+        .tyre {
+            height: 50px;
+            width: 50px;
+            background-color: rgb(122, 20, 20);
+            border-radius: 50%;
+            margin-left: 20px;
+        }
+        .rectangle {
+            height: 50px;
+            width: 250px;
+            background-color: rgb(122, 20, 20);
+        }
+        #tyre2 {
+            margin-left: 180px;
+            margin-top: -50px;
+            }
+            </style>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+            </script>
+            <script>
+            $(document).ready( function() {
+                $('#tyre').click( function() {
+                    var newColor = prompt('Enter new tyre color', '#456');
+                    $('.tyre').css('background-color', newColor);
+                })
+                $('#body').click( function() {
+                    var newColor = prompt('Enter new car body color','#789');
+                    $('.rectangle').css('background-color', newColor);
+                })
+                $('#window').click( function() {
+                    var newColor = prompt('Enter new window color','#678');
+                    var final = '50px solid ' + newColor;
+                    $('.trapezoid').css('border-bottom', final);
+                    $('.trapezoid').css('bordder-left', '25px solidtransparent');
+                    $('.trapezoid').css('border-right', '25px solidtransparent');
+                    $('.trapezoid').css('height', '0px');
+                    $('.trapezoid').css('width', '125px');
+                })
+			$('#tyre-size').click( function() {
+                    var newHeight = prompt('Enter new tyre height','50px');
+                    var newWidth = prompt('Enter new tyre width', '50px');
+                    var tp_margin = "-"+newHeight;
+                    $('#tyre2').css('margin-top', tp_margin);
+                    $('.tyre').css('border-radius', '50%');
+                    $('.tyre').css('height', newHeight);
+                    $('.tyre').css('width', newWidth);
+                })
+            })
+            </script>
+        </head>
+    <body>
+        <h2>Trapezoid CSS</h2>&nbsp;&nbsp;
+        <div class="trapezoid "></div>
+        <div class="rectangle "></div>
+        <div class="tyre " id="tyre1"></div>
+        <div class="tyre " id="tyre2"></div>
+        <br>
+        <button id="tyre" > Change tyre color </button>
+        <button id="body"> Change body color </button>
+        <button id="tyre-size"> Change tyre size </button>
+        <button id="window"> Change window tinting </button>
+        <div id="something"></div>
+    </body>
+</html>
